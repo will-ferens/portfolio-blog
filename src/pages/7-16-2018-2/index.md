@@ -1,7 +1,9 @@
 ---
-path: "/another-one"
+path: "/culture-another-one"
 date: "2018-07-16T17:12:33.962Z"
 title: "My Second Gatsby Post"
+category: "culture"
+subcategory: "books"
 ---
 
 INTERVIEWER

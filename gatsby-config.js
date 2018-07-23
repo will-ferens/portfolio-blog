@@ -14,6 +14,7 @@ module.exports = {
       },
 
     },
-    `gatsby-transformer-remark`, 
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-javascript-frontmatter` 
   ],
 }

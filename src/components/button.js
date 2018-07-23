@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const buttonStyle = {
-    width: `200px`,
+    width: `210px`,
+    height: `35px`,
     color: `#8785b3`,
     border: `1px solid #8785b3`
 }
