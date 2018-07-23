@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Media from 'react-media'
 
 const Header = ({ siteTitle }) => (
   <div
@@ -12,22 +13,19 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
-        margin: '0 auto',
-        maxWidth: 600,
-        padding: '1.45rem 1.0875rem',
+        gridTemplateColumns: `1fr 1fr 1fr`,
+        display: `grid`,
       }}
     >
-      <h1 style={{ margin: 0, textAlign: 'center', fontSize: '18px' }}>
-      
-        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-            <h3 style={{ display: `inline`, }}>{siteTitle}</h3>
+        <Link to="/" style={{ gridColumn: `1`, justifySelf: `center`, marginTop: `10px`, textDecoration: `none`}}>
+            <h3 style={{  }}>{siteTitle}</h3>
         </Link>
-        <ul style={{ listStyle: `none`, float: `right` }}>
+        <ul style={{ listStyle: `none`, gridColumn: `3` }}>
             <Link style={{ margin: 10 }} to="/">Home</Link>
             <Link style={{ margin: 10 }} to="/about/">About</Link>
             <Link style={{ margin: 10 }} to="/projects/">Projects</Link>
         </ul>
-      </h1>
+
     </div>
   </div>
 )
