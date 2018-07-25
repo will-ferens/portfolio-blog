@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import Media from 'react-media'
 import Helmet from 'react-helmet'
 
+import Footer from '../components/footer'
 import Header from '../components/header'
 import './index.css'
 import '../styles/layout-overide.css'
@@ -22,6 +23,7 @@ const Layout = ({ children, data }) => (
     <div>
       {children()}
     </div>
+    <Footer />
   </div>
 )
 

@@ -1,0 +1,20 @@
+.links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    fill: black;
+}
+.nav-item a:visited {
+    text-decoration: none;
+    color: #A8AAFF;
+}
+.nav-item a:hover {
+    color: #DAF1D8;
+    fill: #2AA3EF;
+    transition: .3s;
+}

@@ -13,12 +13,7 @@ h2 {
     font-weight: 100 !important;
 }
 
-li.title-bar {
-    margin: 0 0 16px 0;
-}
-.title-list {
-    padding: 0 10px;
-}
+
 .title-list:hover {
     background-color: #eee;
 }

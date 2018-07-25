@@ -1,12 +1,21 @@
 import React from "react"
 import Helmet from "react-helmet"
+import Media from 'react-media'
+import Link from 'gatsby-link'
 
 export default function Template({
     data 
 }) {
     const post = data.markdownRemark 
         return (
-            <div className="blog-post-container">
+            <Media query="(max-width: 599px)">
+    {matches =>
+        matches ? (
+            <div style={{
+                margin: `0 auto `,
+                maxWidth: `350px`,
+        
+            }}>
             <Helmet title={`Will - ${post.frontmatter.title}`} />
             <div className="blog-post">
                 <h1>{post.frontmatter.title}</h1>
@@ -16,6 +25,35 @@ export default function Template({
                 />
             </div>
             </div>
+        ) : (
+            <div style={{
+                display: `grid`,
+                gridTemplateColumns: `1fr 3fr`,
+                gridGap: `16px`
+            }}>
+            <div style={{
+                gridColumn: `1`,
+                margin: `1rem`
+            }}>
+                <Link to="/tech"><h1>Tech</h1></Link>
+                <Link to="/culture"><h1>Culture</h1></Link>
+                <Link to="/nature"><h1>Nature</h1></Link>
+            </div>
+            <Helmet title={`Will - ${post.frontmatter.title}`} />
+            <div style={{
+                gridColumn: `2`,
+                maxWidth: 600
+            }}>
+                <h1>{post.frontmatter.title}</h1>
+                <div
+                className="blog-post-content"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+                />
+            </div>
+            </div>
+        )}
+            
+        </Media>
         )
 }
 
