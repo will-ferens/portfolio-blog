@@ -38,7 +38,7 @@ export default function IndexPage({ data }) {
                 return (
                   <div className="blog-post-preview" key={post.id}>
                     <h1>
-                      <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                      <Link style={{ color: `#8785b3` }} to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                     </h1>
                     <h2>{post.frontmatter.date}</h2>
                     <p>{post.excerpt}</p>
@@ -90,10 +90,11 @@ export default function IndexPage({ data }) {
           <div style={{
             gridColumn: `2`,
             borderLeft: `1px solid #8785b3`,
-            paddingLeft: `10px`
+            paddingLeft: `10px`,
+            maxWidth: 600
           }}>
             <h1>Hello!</h1>
-            <h4>And welcome.</h4>
+            <h6>And welcome.</h6>
             <p><i>
               I'm a Full Stack Web Developer and this is a blog I built. <br/>
               Below you'll find my writing on all of my passions: code, culture, and our natural world. <br/>
@@ -101,7 +102,8 @@ export default function IndexPage({ data }) {
             </i></p>
           </div>
           <div className="blog-posts" style={{
-            gridColumn: `2`
+            gridColumn: `2`,
+            maxWidth: 600
           }}>
             {posts
               .filter(post => post.node.frontmatter.title.length > 0)
@@ -109,7 +111,7 @@ export default function IndexPage({ data }) {
                 return (
                   <div className="blog-post-preview" key={post.id}>
                     <h1>
-                      <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                      <Link style={{ color: `#8785b3` }}  to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                     </h1>
                     <h2>{post.frontmatter.date}</h2>
                     <p>{post.excerpt}</p>

@@ -40,7 +40,6 @@ const Footer = () => (
         ) : (
         <footer>
             <ul className="links" >
-            <li> <small>Written by @will_ferens</small></li>
             <li className="nav-item">
                 <a href="https://twitter.com/will_ferens" target="_blank" rel="noopener noreferrer">
                 <svg width="17" height="17" viewBox="0 0 1024 1024" >

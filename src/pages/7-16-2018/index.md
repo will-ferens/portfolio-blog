@@ -18,12 +18,12 @@ So I landed on Gatsby JS - a Static Site Generator, or SSG, that uses React comp
 
 We already covered what Gatsby JS is, but what can it do for us? Well first of all: damn is it **_fast_**. And that’s important! Doubleclick, a digital advertising firm by Google, found that [53% of mobile sites are abandoned](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) if they don’t load within 5 seconds. Sheesh! Are we spoiled or what? Doesn’t anyone remember flip phones?? 
 
-The story wouldn’t be complete without GraphQL, the query language (hence the QL) that Gatsby uses to pull all of its data. GraphQL offers an alternative to [RESTful](https://en.wikipedia.org/wiki/GraphQL) architecture and allows the client to structure the data required. This lets our user grab only what they need at runtime, preventing lots of useless data from being tossed back and forth. 
+The story wouldn’t be complete without GraphQL, the query language (hence the QL) that Gatsby uses to pull all of its data. GraphQL offers an alternative to [RESTful](https://en.wikipedia.org/wiki/GraphQL) architecture and allows the client to structure the data required. This lets our user grab only what they need at runtime, preventing lots of useless data from being tossed back and forth. Oh and we can pull data from anywhere we want - including Wordpress! 
 
 In addition, SSG’s are growing in popularity - they’re part of the JAM tech stack that’s elbowing it’s way to the grown up tech stack table. What’s the JAMstack? It stands for JavaScript, API, and Markup. The JAMstack’s guiding philosophy is to let the client do the work - the JavaScript does the heavy lifting by calling destructured and reusable API’s on the backend, while the displayed markup is templated and prebuilt at deploy time. All of this cuts down on calls made to the server, and ultimately delivers faster results, higher security, and cheaper scalability. What’s not to like?
 
 # Conclusion
 
-Overall, switching my personal site to Gatsby JS has been lots of fun and edifying - I learned a little something about GraphQL, Static Site Generators, styling CSS in JS, and functional programing. Check out a more in depth breakdown of my process (with plenty of code!) over [here](/).
+Overall, switching my personal site to Gatsby JS has been lots of fun and edifying - I learned a little something about GraphQL, Static Site Generators, styling CSS in JS, and functional programing. Check back for a more in depth breakdown of my process (with plenty of code!).
 
 Until next time, nerds!

@@ -35,16 +35,16 @@ export default function Template({
                 gridColumn: `1`,
                 margin: `1rem`
             }}>
-                <Link to="/tech"><h1>Tech</h1></Link>
-                <Link to="/culture"><h1>Culture</h1></Link>
-                <Link to="/nature"><h1>Nature</h1></Link>
+                <Link style={{textDecoration: `none`}} to="/tech"><h1>Tech</h1></Link>
+                <Link style={{textDecoration: `none`}} to="/culture"><h1>Culture</h1></Link>
+                <Link style={{textDecoration: `none`}} to="/nature"><h1>Nature</h1></Link>
             </div>
             <Helmet title={`Will - ${post.frontmatter.title}`} />
             <div style={{
                 gridColumn: `2`,
                 maxWidth: 600
             }}>
-                <h1>{post.frontmatter.title}</h1>
+                <h1 >{post.frontmatter.title}</h1>
                 <div
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: post.html }}
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 title
+
             }
         }
     }
