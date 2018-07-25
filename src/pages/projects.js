@@ -93,6 +93,7 @@ const Projects = () => (
 
 
 export default Projects
+
 exports.onCreatePage = async ({ page, boundActionCreators }) => {
     const { createPage } = boundActionCreators
 
