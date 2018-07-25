@@ -39,8 +39,8 @@ const Header = ({ siteTitle }) => (
             }}
           >
               <Link to="/" style={{ gridColumn: `1`, justifySelf: `center`, marginTop: `10px`, textDecoration: `none`}}>
-                  <h3>WILL FERENS</h3>
-                  <h6 style={{color: `black`}}>Full Stack Web Developer</h6>
+                  <h3 style={{color: `black`}}>WILL FERENS</h3>
+                  <h6 style={{color: `#8785b3`}}>Full Stack Web Developer</h6>
               </Link>
               <ul style={{ listStyle: `none`, gridColumn: `3` }}>
                   <Link style={{ margin: 10, textDecoration: `none`, color: `#8785b3` }} to="/">Home</Link>
