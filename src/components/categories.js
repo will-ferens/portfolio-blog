@@ -26,7 +26,6 @@ const TitleList = (props) => {
                                 }} 
                                 to={post.frontmatter.path} 
                                 >
-                                {post.frontmatter.title}
                                 </Link>
                             </li>
                             )

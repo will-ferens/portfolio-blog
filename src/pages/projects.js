@@ -94,18 +94,18 @@ const Projects = () => (
 
 export default Projects
 
-exports.onCreatePage = async ({ page, boundActionCreators }) => {
-    const { createPage } = boundActionCreators
+// exports.onCreatePage = async ({ page, boundActionCreators }) => {
+//     const { createPage } = boundActionCreators
 
-    return new Promise((resolve, reject) => {
-        if(page.path.match(/^\/projects/)) {
-            page.layout = "projects"
+//     return new Promise((resolve, reject) => {
+//         if(page.path.match(/^\/projects/)) {
+//             page.layout = "projects"
 
-            createPage(page)
-        }
+//             createPage(page)
+//         }
 
-        resolve()
-    })
-}
+//         resolve()
+//     })
+// }
 
 
