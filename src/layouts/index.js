@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Media from 'react-media'
 import Helmet from 'react-helmet'
 
 import Footer from '../components/footer'
@@ -11,35 +9,34 @@ import '../styles/layout-overide.css'
 
 
 const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
     <div>
-      {children()}
+        <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+        ]}
+        />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div>
+            {children()}
+        </div>
+        <Footer />
     </div>
-    <Footer />
-  </div>
 )
 
 Layout.propTypes = {
-  children: PropTypes.func,
+    children: PropTypes.func,
 }
 
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    query SiteTitleQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
     }
-  }
 `
-

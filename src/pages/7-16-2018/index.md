@@ -4,7 +4,7 @@ date: "2018-07-16T17:12:33.962Z"
 title: "The Rundown: Gatsby JS"
 ---
 
-Over the past few months, I’ve grown tired of my [old personal site](http://will-ferens.surge.sh/) - it’s a overworked, extremely slow, hosted on a free static publishing site (without a fancy .com), and the code is downright messy. I built it a while ago and it's no longer representative of what I can do. So I blocked off some time to start from scratch on something new. I knew I wanted a blog, not only to prove that I could build one, but also to keep closer track of my coding processes and establish a better web presence. #goals.
+Over the past few months, I’ve grown tired of my [old personal site](http://will-ferens.surge.sh/) - it’s a bit overworked, extremely slow, hosted on a free static publishing site (without a fancy .com), and the code is downright messy. I built it a while ago and it's no longer representative of what I can do. So I blocked off some time to start from scratch on something new. I knew I wanted a blog, not only to prove that I could build one, but also to keep closer track of my coding processes and establish a better web presence. #goals.
 
 Of course, there are a ton of ways I could have gone about building it. The first and most obvious way (for a full stack dev like myself) would be to spin up an API to serve my posts, a database to store them, and a fresh React app to display them. This isn’t a bad option - I love building from scratch and architecting everything from start to finish. 
 

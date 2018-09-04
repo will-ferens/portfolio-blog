@@ -1,6 +1,6 @@
 ---
 path: "/culture-loveandonehundred"
-date: "2018-08-05T21:53:27"
+date: "2018-08-05T21:53:27+00:00"
 title: "Bookends"
 ---
 Three years ago, I opened a new chapter of my life with a book. I spent the summer working on the road, giving tours to iconic American locales - Yosemite National Park, Las Vegas, the Grand Canyon, New Orleans, New York - in a large bus built for shuttling people to airport terminals. It was an adventure, one that was formative and destructive in equal parts. I had learned so much about myself and other people, but it took years to realize the full breadth of it.
