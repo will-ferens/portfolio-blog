@@ -22,9 +22,9 @@ const Projects = () => (
                         title="Shelf Life"
                         description="A reading list app that lets you organize your books, find new ones to read, and gives you recommendations based on what you’ve liked! Built with React / Redux, Node.js, and MongoDB."
                         image={shelf}
-                        button1="/coming-soon"
+                        button1="http://shelf-life.surge.sh/"
                         button2="https://github.com/will-ferens/shelf-life"
-                        button3="/"
+                        button3="/tech-shelf-life-mvp"
                     />
                 
                     <Project 
@@ -59,9 +59,9 @@ const Projects = () => (
                         title="Shelf Life"
                         description="A reading list app that lets you organize your books, find new ones to read, and gives you recommendations based on what you’ve liked! Built with React / Redux, Node.js, and MongoDB."
                         image={shelf}
-                        button1="/coming-soon"
+                        button1="http://shelf-life.surge.sh/"
                         button2="https://github.com/will-ferens/shelf-life"
-                        button3="/"
+                        button3="/tech-shelf-life-mvp"
                         />
                     
                     <Project 
