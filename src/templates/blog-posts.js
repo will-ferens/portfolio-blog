@@ -1,7 +1,8 @@
 import React from "react"
 import Helmet from "react-helmet"
 import Media from 'react-media'
-import Link from 'gatsby-link'
+
+import '../styles/blog-post.css'
 
 export default function Template({
     data 
@@ -14,10 +15,9 @@ export default function Template({
             <div style={{
                 margin: `0 auto `,
                 maxWidth: `350px`,
-        
             }}>
             <Helmet title={`Will - ${post.frontmatter.title}`} />
-            <div className="blog-post">
+            <div className="blog-post" style={{ background: `#121212` }}>
                 <h1>{post.frontmatter.title}</h1>
                 <div
                 className="blog-post-content"
@@ -28,19 +28,14 @@ export default function Template({
         ) : (
             <div style={{
                 display: `grid`,
-                gridTemplateColumns: `1fr 3fr`,
+                gridTemplateColumns: `25% auto 25%`,
+                
                 gridGap: `16px`
             }}>
-            <div style={{
-                gridColumn: `1`,
-                margin: `1rem`
-            }}>
-
-            </div>
-            <Helmet title={`Will - ${post.frontmatter.title}`} />
-            <div style={{
+            <div className="blog-post" style={{
                 gridColumn: `2`,
-                maxWidth: 600
+                width: `90%`,
+                justifySelf: `center`,
             }}>
                 <h1 >{post.frontmatter.title}</h1>
                 <div

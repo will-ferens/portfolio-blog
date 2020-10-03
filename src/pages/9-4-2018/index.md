@@ -32,11 +32,10 @@ function getRandomGrid() {
     for (let i = 0; i < grid.length; i++) {
         grid[i] = new Array(10)
         for (let j = 0; j < grid.length; j++) {
+            grid[i][j] = Math.floor(Math.random() * 2)
         }
     }
     return grid
-}
-
 }
 ```
 
@@ -57,7 +56,20 @@ function getRandomGrid() {
 
 So after we’ve added this line, the output will look something like this
 
-[grid]('./grid.png')
+```
+[
+    [ 0, 0, 0, 1, 1, 1, 0, 1, 1, 1 ],
+    [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 1 ],
+    [ 0, 1, 1, 0, 1, 0, 0, 1, 0, 0 ],
+    [ 0, 0, 0, 1, 1, 0, 1, 0, 0, 1 ],
+    [ 1, 0, 1, 0, 1, 0, 0, 0, 0, 0 ],
+    [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0 ],
+    [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 ],
+    [ 0, 0, 0, 0, 0, 1, 0, 1, 0, 1 ],
+    [ 1, 1, 0, 0, 1, 1, 0, 0, 1, 1 ],
+    [ 1, 1, 1, 0, 1, 0, 1, 1, 1, 0 ]
+]
+```
 
 Great!... now what? The next part of our app is a dozy: to count neighbors of each cell, we have to find the value of each array surrounding the cell in question then add them up - without counting the cell itself. In order to do this, we’ll first have to access the values of the cells themselves with another nested for loop. But we only want to count the cells adjacent to one another, left to right, top to bottom, right? So our for loops are going to count up from -1 to 2. That way, it will count the cells one left of the one in question, the next in the row or column, and then finally the one to the right.
 

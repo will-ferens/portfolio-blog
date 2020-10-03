@@ -1,0 +1,14 @@
+.blog-post {
+    background: #242424;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 6rem;
+}
+
+.blog-post-content a{
+    display: inline;
+}
+
+.blog-post-content pre {
+    background: #292929;
+}
