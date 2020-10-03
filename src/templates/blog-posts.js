@@ -35,9 +35,7 @@ export default function Template({
                 gridColumn: `1`,
                 margin: `1rem`
             }}>
-                <Link style={{textDecoration: `none`}} to="/tech"><h1>Tech</h1></Link>
-                <Link style={{textDecoration: `none`}} to="/culture"><h1>Culture</h1></Link>
-                <Link style={{textDecoration: `none`}} to="/nature"><h1>Nature</h1></Link>
+
             </div>
             <Helmet title={`Will - ${post.frontmatter.title}`} />
             <div style={{

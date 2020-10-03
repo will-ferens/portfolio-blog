@@ -1,13 +1,23 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    background: #121212;
+}
+
 .links {
     display: flex;
     list-style: none;
     justify-content: space-around;
+    padding: 12px;
+    margin-bottom: 0;
 }
 
 .nav-item a {
     text-decoration: none;
-    color: black;
-    fill: black;
+    color: #DEDEDE;
+    fill: #DEDEDE;
 }
 .nav-item a:visited {
     text-decoration: none;
