@@ -4,6 +4,7 @@ import Media from 'react-media'
 
 import '../styles/blog-post.css'
 
+
 export default function Template({
     data 
 }) {
@@ -13,7 +14,7 @@ export default function Template({
     {matches =>
         matches ? (
             <div style={{
-                margin: `0 auto `,
+                margin: `0 auto 8rem`,
                 maxWidth: `350px`,
             }}>
             <Helmet title={`Will - ${post.frontmatter.title}`} />

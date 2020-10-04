@@ -2,11 +2,12 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Media from 'react-media'
 
-import TitleList from '../components/categories'
 import '../styles/blog-listing.css'
 
-export default function IndexPage({ data }) {
 
+
+export default function IndexPage({ data }) {
+    
 const { edges: posts } = data.allMarkdownRemark
 
     return (

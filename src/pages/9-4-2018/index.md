@@ -26,7 +26,7 @@ Pretty simple, right? Let’s jump right into dissecting this problem. We’ll n
 
 The first thing we’ll need is a grid onto which we can project our board. We can represent the board by creating a two dimensional array, or matrix. Matrices are building blocks of a ton of digital representations; digital photos, chess boards, and spreadsheets are all examples. Now there are a ton of ways to implement this in JavaScript, some more elegant than others, but for our simple purposes, I went with a good old fashioned nested for loop:
 
-```
+```javascript
 function getRandomGrid() {
     const grid = new Array(10)
     for (let i = 0; i < grid.length; i++) {
