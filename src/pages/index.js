@@ -16,10 +16,9 @@ const { edges: posts } = data.allMarkdownRemark
             matches ? (
             
             <div style={{
-                margin: '0 auto',
+                margin: '0 auto 6rem',
                 maxWidth: 350,
                 padding: '1.45rem 1.0875rem',
-                marginBottom: `6rem`
             }}>
             <div>
                 <h1>Hello.</h1>
