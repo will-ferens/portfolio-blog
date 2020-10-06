@@ -9,6 +9,6 @@
     display: inline;
 }
 
-.blog-post-content pre {
-    background: #292929;
+.blog-post span {
+    display: inline;
 }
