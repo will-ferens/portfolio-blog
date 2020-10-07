@@ -13,16 +13,12 @@ const Header = ({ siteTitle }) => (
               maxWidth: 350,
               padding: '1.45rem 1.0875rem 0 1.0875rem',
             }}>
-              <Link to="/" style={{ textAlign: `center`, textDecoration: `none`  }}>
+              <Link to="/">
                 <h3>{ siteTitle }</h3>
               </Link>
-              <div style={{
-                margin: '0 auto',
-                display: `grid`,
-                gridTemplateColumns: `1fr 1fr`,
-                maxWidth: 400
-              }}>
-              </div>
+              <Link to="/about" >
+                <p style={{color: `#C0BDFF`, fontWeight: `400`}}>About</p>
+              </Link>
             </header>
           ) : (
             <header style={{
@@ -33,6 +29,9 @@ const Header = ({ siteTitle }) => (
             >
               <Link to="/" style={{ gridColumn: `2`, justifySelf: `center`, marginTop: `10px`, width: `90%`, textDecoration: `none`}}>
                   <h3 style={{color: `#C0BDFF`}}>{ siteTitle }</h3>
+              </Link>
+              <Link to="/about" style={{ gridColumn: `3`, justifySelf: `center`, marginTop: `10px`, width: `90%`, textDecoration: `none`, }}>
+                  <p style={{color: `#C0BDFF`, fontWeight: `400`}}>About</p>
               </Link>
           </header>
         )}

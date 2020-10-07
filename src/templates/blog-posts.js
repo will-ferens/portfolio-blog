@@ -30,7 +30,6 @@ export default function Template({
             <div style={{
                 display: `grid`,
                 gridTemplateColumns: `25% auto 25%`,
-                
                 gridGap: `16px`
             }}>
             <div className="blog-post" style={{

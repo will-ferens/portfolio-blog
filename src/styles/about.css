@@ -1,0 +1,13 @@
+
+.about {
+    grid-column: 2;
+    justify-self: center;
+    background: #242424;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 6rem;
+}
+
+.about p {
+    margin-bottom: 32px;
+}
