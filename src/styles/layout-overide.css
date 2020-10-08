@@ -1,4 +1,5 @@
-@import "prismjs/themes/prism-tomorrow.css";
+@import "prism.css";
+
 * {
     color: #DEDEDE;
     font-family: Helvetica;
