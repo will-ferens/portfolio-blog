@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Media from 'react-media'
 
+import '../styles/header.css'
+
 
 const Header = ({ siteTitle }) => (
   <div>
@@ -12,11 +14,13 @@ const Header = ({ siteTitle }) => (
               margin: '0px auto',
               maxWidth: 350,
               padding: '1.45rem 1.0875rem 0 1.0875rem',
+              display: `flex`,
+              justifyContent: `space-between`
             }}>
-              <Link to="/">
+              <Link className="header-links" to="/">
                 <h3>{ siteTitle }</h3>
               </Link>
-              <Link to="/about" >
+              <Link className="header-links" to="/about" >
                 <p style={{color: `#C0BDFF`, fontWeight: `400`}}>About</p>
               </Link>
             </header>
