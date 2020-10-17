@@ -1,4 +1,6 @@
 const path = require('path')
+const axios = require('axios')
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators
     const blogPostTemplate = path.resolve(`src/templates/blog-posts.js`)
@@ -34,6 +36,25 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             })
             })
         })
+}
+
+exports.sourceNodes = async ({
+    actions,
+    createNodeId,
+    createContentDigest
+}) => {
+    const { createNode } = actions
+
+    const fetchSheet = () => {
+        axios.get(
+            `https://docs.google.com/spreadsheets/d/e/2PACX-1vTEG33Ghcz54HyGfJmBkrDwulVrIIpJUDde5QisC-K64HWZQWsSb3LEw9NuOni2hw-HIob-NX2uGOLJ/pubhtml?gid=0&single=true`
+        )
+    }
+    
+    const response = await fetchSheet()
+
+    createNode(response)
+
 }
 
 exports.modifyBabelrc = ({ babelrc }) => ({
