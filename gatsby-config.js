@@ -3,6 +3,7 @@ module.exports = {
     title: `Will Ferens`,
     description: `A collection of notes, personal and professional.`,
     author: `@gatsbyjs`,
+    image: `/images/feather.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

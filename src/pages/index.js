@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import * as Global from '../constants/globalStyles'
-import * as Styled from './index/styles'
+import * as Styled from '../styles/index'
 
 export default function IndexPage ({ data }) {
   const { edges: posts } = data.allMarkdownRemark
