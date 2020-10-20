@@ -1,4 +1,6 @@
-//Cretea Blog Post pages
+const axios = require('axios');
+
+//Crete Blog Post pages
 exports.createPages = async ({
     actions,
     graphql,
@@ -46,3 +48,4 @@ exports.createPages = async ({
         })
     })
 }
+

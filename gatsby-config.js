@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Will Ferens`,
@@ -65,3 +69,4 @@ module.exports = {
     `gatsby-plugin-sharp`,
   ],
 }
+
