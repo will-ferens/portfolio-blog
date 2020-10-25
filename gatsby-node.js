@@ -1,14 +1,15 @@
-const axios = require('axios');
-
-//Crete Blog Post pages
+//Create Blog Post pages, create Book pages
 exports.createPages = async ({
     actions,
     graphql,
     reporter
 }) => {
-	const { createPage } = actions
-	
+    const {
+        createPage
+    } = actions
+
     const blogPostTemplate = require.resolve(`./src/templates/postTemplate.js`)
+    const bookTemplate = require.resolve(`./src/templates/bookTemplate.js`)
     const result = await graphql(`
         {
             allMarkdownRemark(
@@ -26,6 +27,16 @@ exports.createPages = async ({
 							title
 						}
 					}
+                }
+            }
+            allGoogleSheet1Sheet {
+                edges {
+                    node {
+                        title
+                        author
+                        genres
+                        pages
+                    }
                 }
             }
         }
@@ -47,5 +58,17 @@ exports.createPages = async ({
             },
         })
     })
-}
 
+    result.data.allGoogleSheet1Sheet.edges.forEach(({
+        node
+    }) => {
+        let bookSlug = `/books/${node.title.toLowerCase().replace(/ /g,'-')}`
+        createPage({
+            path: bookSlug,
+            component: bookTemplate,
+            context: {
+                title: node.title
+            }
+        })
+    })
+}
