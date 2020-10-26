@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 
 import * as Global from '../constants/globalStyles'
+import * as Styled from '../templateStyles/bookPageTemplate'
 
 export default function Template({
     data, // this prop will be injected by the GraphQL query below.
@@ -13,12 +14,20 @@ export default function Template({
 
     return (
         <Layout>
-            <Global.Container>
-                <Global.ContainerItem>
-                <h1>{googleSheet1Sheet.title}</h1>
-                <Img src={googleSheet1Sheet.optimizedCoverImage.childImageSharp.fluid.src}/>
-                </Global.ContainerItem>
-            </Global.Container>
+        
+            <Styled.HeaderContainer>
+                <Styled.CoverContainer>
+                    <Img fluid={{
+                        ...googleSheet1Sheet.optimizedCoverImage.childImageSharp.fluid,
+                        sizes: '(max-width: 250px)'
+                    }} />
+                </Styled.CoverContainer>
+                <Styled.TitleContainer>
+                    <h1>{googleSheet1Sheet.title}</h1>
+                    <h2>{googleSheet1Sheet.author}</h2>
+                    <p>{googleSheet1Sheet.genres}</p>
+                </Styled.TitleContainer>
+            </Styled.HeaderContainer>
         </Layout>
     )
 }
@@ -32,7 +41,7 @@ export const pageQuery = graphql`
             rating
             optimizedCoverImage {
                 childImageSharp {
-                    fluid(maxWidth: 400, maxHeight: 250) {
+                    fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                     }
                 }

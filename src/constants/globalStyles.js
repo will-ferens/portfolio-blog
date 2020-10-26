@@ -24,7 +24,11 @@ export const Heading1 = styled.h1`
     color: #3C3880;
     text-decoration: none;
 `
-
+export const LargeImageWrapper = styled.div`
+    .gatsby-image-wrapper {
+        max-width: 150px;
+    }
+`
 export const darkTheme = {
     headerColor: 'C0BDFF',
     backgroundColor: '#121212',

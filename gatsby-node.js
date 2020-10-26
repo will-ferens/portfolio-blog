@@ -1,3 +1,5 @@
+const kebabCase = require('lodash.kebabcase')
+
 //Create Blog Post pages, create Book pages
 exports.createPages = async ({
     actions,
@@ -62,7 +64,7 @@ exports.createPages = async ({
     result.data.allGoogleSheet1Sheet.edges.forEach(({
         node
     }) => {
-        let bookSlug = `/books/${node.title.toLowerCase().replace(/ /g,'-')}`
+        let bookSlug = `/books/${kebabCase(node.title)}`
         createPage({
             path: bookSlug,
             component: bookTemplate,
