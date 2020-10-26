@@ -38,6 +38,14 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-remote-images",
+      options: {
+        nodeType: "googleSheet1Sheet",
+        imagePath: "coverImage",
+        name: "optimizedCoverImage",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,

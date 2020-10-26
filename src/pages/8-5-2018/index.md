@@ -1,5 +1,5 @@
 ---
-slug: "/culture-loveandonehundred"
+slug: "/blog/loveandonehundred"
 date: "2018-08-05T21:53:27+00:00"
 title: "Bookends"
 ---
