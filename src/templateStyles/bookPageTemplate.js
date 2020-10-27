@@ -2,13 +2,13 @@ import styled from '@emotion/styled'
 
 export const HeaderContainer = styled.div`
     display: grid;
-    grid-template-columns: 25% 1fr 1fr 25%;
-    
+    grid-template-columns: 27.5% auto 1fr 27.5%;
+    grid-gap: 16px;
+    padding-bottom: 48px;
 `
 
 export const CoverContainer = styled.div`
     grid-column: 2;
-    justify-self: center;
     .gatsby-image-wrapper {
         width: 250px;
     }

@@ -14,7 +14,6 @@ export default function Template({
 
     return (
         <Layout>
-        
             <Styled.HeaderContainer>
                 <Styled.CoverContainer>
                     <Img fluid={{
@@ -28,6 +27,11 @@ export default function Template({
                     <p>{googleSheet1Sheet.genres}</p>
                 </Styled.TitleContainer>
             </Styled.HeaderContainer>
+            <Global.Container>
+                <Global.ContainerItem>
+                    <p>{googleSheet1Sheet.blurb}</p>
+                </Global.ContainerItem>
+            </Global.Container>
         </Layout>
     )
 }
@@ -39,6 +43,7 @@ export const pageQuery = graphql`
             author
             genres
             rating
+            blurb
             optimizedCoverImage {
                 childImageSharp {
                     fluid(quality: 100) {

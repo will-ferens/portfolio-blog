@@ -5,10 +5,11 @@ export const Footer = styled.div`
     display: grid;
     grid-template-columns: 25% auto 25%;
     grid-gap: 16px;
+    padding-top: 48px;
     @media(max-width: 599px) { 
         display: block;
         margin: 0 auto;
-        padding: 16px;
+        padding: 32px 16px 16px 16px;
     }
 `
 export const FooterItem = styled.div`

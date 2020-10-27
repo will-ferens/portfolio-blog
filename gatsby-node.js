@@ -38,6 +38,7 @@ exports.createPages = async ({
                         author
                         genres
                         pages
+                        blurb
                     }
                 }
             }
