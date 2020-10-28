@@ -1,16 +1,16 @@
 import React from 'react'
 import Layout from '../components/layout'
+import BookCard from '../components/bookCard/bookCard'
 
 import * as Global from '../constants/globalStyles'
 
 const Books = ({ data }) => {
-    const books = data.allGoogleSheet.nodes[0].Sheet1
-    console.log(books)
+    const books = data.allGoogleSheet1Sheet.nodes
     return (
         <Layout>
             <Global.Container>
                 <Global.ContainerItem>
-                    
+                    <BookCard books={books} />
                 </Global.ContainerItem>
             </Global.Container>
         </Layout>
@@ -19,12 +19,17 @@ const Books = ({ data }) => {
 
 export const booksQuery = graphql`
     query allBooksQuery {
-        allGoogleSheet {
+        allGoogleSheet1Sheet {
             nodes {
-                Sheet1 {
-                    author
-                    coverImage
-                    title
+                id
+                author
+                title
+                optimizedCoverImage {
+                    childImageSharp {
+                        fluid(quality: 100) {
+                        ...GatsbyImageSharpFluid
+                        }
+                    }
                 }
             }
         }

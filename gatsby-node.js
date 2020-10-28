@@ -34,6 +34,7 @@ exports.createPages = async ({
             allGoogleSheet1Sheet {
                 edges {
                     node {
+                        id
                         title
                         author
                         genres

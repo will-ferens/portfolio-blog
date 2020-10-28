@@ -16,7 +16,6 @@ export const CoverContainer = styled.div`
 
 export const TitleContainer = styled.div`
     grid-column: 3;
-    justify-self: center;
     h1 {
         font-style: italic;
         margin-bottom: 6px;
