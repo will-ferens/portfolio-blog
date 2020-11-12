@@ -10,7 +10,7 @@ import * as Styled from '../styles/index'
 export default function IndexPage ({ data }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
-
+ 
       <Layout>
         <SEO title="Home" />
         <Global.Container>
