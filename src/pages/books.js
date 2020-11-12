@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import BookCard from '../components/bookCard/bookCard'
-
+import { graphql } from 'gatsby'
 import * as Global from '../constants/globalStyles'
 
 const Books = ({ data }) => {

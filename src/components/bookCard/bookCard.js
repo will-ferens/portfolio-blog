@@ -11,9 +11,7 @@ import * as Styled from './styles'
 
 const BookCard = (props) => {
     const linkStyle = css`
-        height: 200px;
-        padding: 10px;
-        width: 20%;
+        padding: 20px;
     `
     const { books } = props;
     return (
