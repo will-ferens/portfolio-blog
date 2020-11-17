@@ -1,18 +1,28 @@
 import React from 'react'
 import Layout from '../components/layout'
-import BookCard from '../components/bookCard/bookCard'
+import BookGrid from '../components/bookGrid/bookGrid'
 import { graphql } from 'gatsby'
 import * as Global from '../constants/globalStyles'
+import { GridContainer } from '../templateStyles/bookPageTemplate'
 
 const Books = ({ data }) => {
     const books = data.allGoogleSheet1Sheet.nodes
+    const books20 = books.filter((book => {
+        if(book.completed != null) {
+            return book.completed.indexOf('2020' !== -1)
+        } else {
+            return null
+        }
+    }))
+
     return (
         <Layout>
-            <Global.Container>
+            <GridContainer>
                 <Global.ContainerItem>
-                    <BookCard books={books} />
+                    <Global.Heading1>2020</Global.Heading1>
+                    <BookGrid books={books20} />
                 </Global.ContainerItem>
-            </Global.Container>
+            </GridContainer>
         </Layout>
     )
 }
@@ -24,6 +34,9 @@ export const booksQuery = graphql`
                 id
                 author
                 title
+                completed
+                rating
+                genres
                 optimizedCoverImage {
                     childImageSharp {
                         fluid(quality: 100) {

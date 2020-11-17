@@ -9,9 +9,20 @@ import kebabCase from 'lodash.kebabcase'
 import * as Styled from './styles'
 
 
-const BookCard = (props) => {
+const BookGrid = (props) => {
     const linkStyle = css`
         padding: 20px;
+        margin: 0 4px;
+        transition: all 0.3s ease; 
+        &:hover {
+            opacity: .8;
+        }
+        @media(max-width: 991px) { 
+            padding: 8px 4px;
+        }
+        @media(max-width: 599px) {
+            border-bottom: 1px solid #3C3880;
+        }
     `
     const { books } = props;
     return (
@@ -30,4 +41,4 @@ const BookCard = (props) => {
 }
 
 
-export default BookCard
+export default BookGrid
