@@ -7,7 +7,7 @@ module.exports = {
     title: `Will Ferens`,
     description: `A collection of notes, personal and professional.`,
     author: `@gatsbyjs`,
-    image: `/images/feather.png`,
+    icon: `src/images/favicon.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -93,6 +93,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon.png`
+      }
+    }
   ],
 }
 

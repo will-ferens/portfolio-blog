@@ -40,3 +40,7 @@ export const GridContainer = styled.div`
         grid-gap: 0;
     }
 `
+
+export const BackButtonContainer = styled.div`
+    
+`
