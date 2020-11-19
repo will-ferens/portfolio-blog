@@ -10,11 +10,6 @@ const firstColumn = css`
   grid-column: 2;
 `
 
-const secondColumn = css`
-  grid-column: 3;
-  font-weight: 400;
-`
-
 const linkColor = css`
   color: #3C3880; 
 `
@@ -26,11 +21,20 @@ const Header = ({ siteTitle }) => (
           <Global.Heading1>{ siteTitle }</Global.Heading1>
       </Link>
     </Styled.LinkWrapper>
-      <Styled.LinkWrapper css={secondColumn}>
+
+    <Styled.secondColumn>
+      <Styled.LinkWrapper>
         <Link to="/about" >
             <p css={linkColor}>About</p>
         </Link>
       </Styled.LinkWrapper>
+
+      <Styled.LinkWrapper>
+        <Link to="/books" >
+            <p css={linkColor}>Books</p>
+        </Link>
+      </Styled.LinkWrapper>
+    </Styled.secondColumn>
   </Styled.Header>
   </div>
 )

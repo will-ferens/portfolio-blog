@@ -16,6 +16,7 @@ export const Header = styled.div`
 export const LinkWrapper = styled.div`
     justify-self: center;
     margin-top: 10px;
+    padding: 0 12px 0 0;
     width: 90%;
     @media(max-width: 599px) { 
         display: flex;
@@ -23,3 +24,9 @@ export const LinkWrapper = styled.div`
     }
 `
 
+export const secondColumn = styled.div`
+    grid-column: 3;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+`
