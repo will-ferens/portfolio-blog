@@ -1,7 +1,10 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+
 import Layout from '../components/layout'
 import BookGrid from '../components/bookGrid/bookGrid'
-import { graphql } from 'gatsby'
+import PieChart from '../components/pieChart/pieChart'
+
 import * as Global from '../constants/globalStyles'
 import { GridContainer } from '../templateStyles/bookPageTemplate'
 
@@ -21,6 +24,7 @@ const Books = ({ data }) => {
                 <Global.ContainerItem>
                     <Global.Heading1>2020</Global.Heading1>
                     <BookGrid books={books20} />
+                    <PieChart />
                 </Global.ContainerItem>
             </GridContainer>
         </Layout>
