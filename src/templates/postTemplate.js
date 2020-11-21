@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 
 import Layout from '../components/layout'
 
@@ -12,6 +13,7 @@ export default function Template({
     const { frontmatter, html } = markdownRemark
     return (
         <Layout>
+        <SEO title="Blog" />
             <Global.Container>
                 <Global.ContainerItem>
                     <h1>{frontmatter.title}</h1>

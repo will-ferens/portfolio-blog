@@ -1,10 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 import * as Global from '../constants/globalStyles'
 
 const About = () => (
     <Layout>
+        <SEO title="About" />
         <Global.Container>
             <Global.ContainerItem>
                 <h1>Briefly Noted</h1>

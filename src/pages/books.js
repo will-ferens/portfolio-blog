@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import BookGrid from '../components/bookGrid/bookGrid'
 import PieChart from '../components/pieChart/pieChart'
+import SEO from '../components/seo'
 
 import * as Global from '../constants/globalStyles'
 import { GridContainer } from '../templateStyles/bookPageTemplate'
@@ -20,6 +21,7 @@ const Books = ({ data }) => {
 
     return (
         <Layout>
+            <SEO title="Books" />
             <GridContainer>
                 <Global.ContainerItem>
                     <Global.Heading1>2020</Global.Heading1>

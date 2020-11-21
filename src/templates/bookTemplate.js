@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { css } from "@emotion/core"
+import SEO from '../components/seo'
 
 import Ratings from '../components/ratings/ratings'
 import Layout from '../components/layout'
@@ -21,6 +22,7 @@ export default function Template({
     `
     return (
         <Layout>
+            <SEO title="Books" />
             <Styled.HeaderContainer>
                 <Link css={linkStyle} to="/books">← Back</Link>
             </Styled.HeaderContainer>
