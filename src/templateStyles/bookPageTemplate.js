@@ -1,4 +1,9 @@
 import styled from '@emotion/styled'
+// To Do
+
+// - currently reading area
+// - chart library d3js
+// - Charts: pie chart of genres; bar chart of pages per month
 
 export const HeaderContainer = styled.div`
     display: grid;
