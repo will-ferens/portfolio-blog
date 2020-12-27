@@ -11,6 +11,7 @@ import { GridContainer } from '../templateStyles/bookPageTemplate'
 
 const Books = ({ data }) => {
     const books = data.allGoogleSheet1Sheet.nodes
+    
     const currentlyReading = books.filter((book => {
         if(book.completed == null) {
             return book
@@ -18,6 +19,7 @@ const Books = ({ data }) => {
             return null
         }
     }))
+    
     const books20 = books.filter((book => {
         if(book.completed != null) {
             return book.completed.indexOf('2020' !== -1)
@@ -25,7 +27,7 @@ const Books = ({ data }) => {
             return null
         }
     }))
-    console.log(currentlyReading)
+
     return (
         <Layout>
             <SEO title="Books" />
