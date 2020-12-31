@@ -15,6 +15,7 @@ export const ContainerItem = styled.div`
     grid-column: 2;
     justify-self: center;
     width: 90%;
+    padding: 16px 0;
 `
 
 export const Heading1 = styled.h1`
