@@ -3,14 +3,16 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import BookGrid from '../components/bookGrid/bookGrid'
-import PieChart from '../components/pieChart/pieChart'
+
 import SEO from '../components/seo'
 
 import * as Global from '../constants/globalStyles'
 import { GridContainer } from '../templateStyles/bookPageTemplate'
 
+import  { groupBy, chain, value } from 'lodash'
+
 const Books = ({ data }) => {
-    const books = data.allGoogleSheet1Sheet.nodes
+    let books = data.allGoogleSheet1Sheet.nodes
     
     const currentlyReading = books.filter((book => {
         if(book.completed == null) {
@@ -19,28 +21,37 @@ const Books = ({ data }) => {
             return null
         }
     }))
-    
-    const books20 = books.filter((book => {
+
+    books.filter((book => {
         if(book.completed != null) {
-            return book.completed.indexOf('2020' !== -1)
-        } else {
-            return null
+            book.year = book.completed.split('-')[0]
         }
     }))
 
+    // const books20 = books.filter((book => {
+    //     if(book.completed != null) {
+    //         return book.completed.indexOf('2020' !== -1)
+    //     } else {
+    //         return null
+    //     }
+    // }))
+
+    const booksObj = groupBy(books, book => book.year)
+    console.log(booksObj)
+    
     return (
         <Layout>
             <SEO title="Books" />
             <GridContainer>
-                <Global.ContainerItem>
-                    <Global.Heading1>Currently Reading</Global.Heading1>
-                    <BookGrid books={currentlyReading} />
-                </Global.ContainerItem>
-                <Global.ContainerItem>
-                    <Global.Heading1>2020</Global.Heading1>
-                    <BookGrid books={books20} />
-                    <PieChart />
-                </Global.ContainerItem>
+                {
+
+                    Object.entries(booksObj).reverse().map(([key, value]) => 
+                        <Global.ContainerItem key={key}>
+                            <Global.Heading1>{key != 'undefined' ? key : 'Currently Reading'}</Global.Heading1>
+                            <BookGrid books={value} />
+                        </Global.ContainerItem>
+                    )
+                }
             </GridContainer>
         </Layout>
     )
@@ -48,7 +59,7 @@ const Books = ({ data }) => {
 
 export const booksQuery = graphql`
     query allBooksQuery {
-        allGoogleSheet1Sheet {
+        allGoogleSheet1Sheet(sort: {fields: started}) {
             nodes {
                 id
                 author
@@ -59,7 +70,7 @@ export const booksQuery = graphql`
                 optimizedCoverImage {
                     childImageSharp {
                         fluid(quality: 100) {
-                        ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }

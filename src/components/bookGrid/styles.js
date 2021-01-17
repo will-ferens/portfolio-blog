@@ -12,6 +12,3 @@ export const BookGrid = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
 `
-
-export const Book = styled.article`
-`

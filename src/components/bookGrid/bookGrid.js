@@ -25,17 +25,18 @@ const BookGrid = (props) => {
         }
     `
     const { books } = props;
+
     return (
         <Styled.BookGrid>
-            {
-                books.map(book => (
-                    <Link css={linkStyle} key={book.id} to={`/books/${kebabCase(book.title)}/`} >
-                        <Img fluid={{
-                            ...book.optimizedCoverImage.childImageSharp.fluid
-                        }} />  
-                    </Link>
-                ))
-            }
+        {
+            books.map(book => (
+                <Link css={linkStyle} key={book.id} to={`/books/${kebabCase(book.title)}/`} >
+                    <Img fluid={{
+                        ...book.optimizedCoverImage.childImageSharp.fluid
+                    }} />  
+                </Link>
+            ))
+        }
         </Styled.BookGrid>
     )
 }

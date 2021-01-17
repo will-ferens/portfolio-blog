@@ -40,6 +40,7 @@ export const TitleContainer = styled.div`
 export const GridContainer = styled.div`
     display: grid;
     grid-template-columns: 5% auto 5%;
+    grid-template-rows: auto;
     grid-gap: 16px;
     @media(max-width: 599px) { 
         grid-gap: 0;

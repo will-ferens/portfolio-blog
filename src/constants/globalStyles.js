@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 export const Container = styled.div`
     display: grid;
     grid-template-columns: 25% auto 25%;
+   
     grid-gap: 16px;
     @media(max-width: 599px) {
         display: block;

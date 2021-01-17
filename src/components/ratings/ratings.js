@@ -19,11 +19,12 @@ const Ratings = (props) => {
     }
     
 
-    const Star = (props) => <svg viewBox="0 -10 511 511" height={16} width={16}>
+    const Star = (props) => 
+    <svg viewBox="0 -10 511 511" height={16} width={16}>
         <defs>
             <linearGradient id={props.star.percentage} x1={props.star.percentage} y1="0%" x2="100%" y2="0%">
-                <stop offset="1%" stopColor="#3C3880" stop-opacity="1"/>
-                <stop offset="0%" stopColor="#fff" stop-opacity="1" />
+                <stop offset="1%" stopColor="#3C3880" stopOpacity="1"/>
+                <stop offset="0%" stopColor="#fff" stopOpacity="1" />
             </linearGradient>
         </defs>
         <path d={ICONS.STAR} fill={props.star.fill}></path>
