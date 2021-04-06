@@ -37,7 +37,6 @@ const Books = ({ data }) => {
     // }))
 
     const booksObj = groupBy(books, book => book.year)
-    console.log(booksObj)
     
     return (
         <Layout>
