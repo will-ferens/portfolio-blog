@@ -218,6 +218,9 @@ legend {
 textarea {
   overflow: auto;
 }
+body :not(pre) > code[class*="language-"] {
+  white-space: pre;
+}
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -596,4 +599,9 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.blog-post-content a {
+  color: #3C3880;
+  text-decoration: underline;
 }

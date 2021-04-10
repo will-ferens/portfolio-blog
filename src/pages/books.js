@@ -9,32 +9,16 @@ import SEO from '../components/seo'
 import * as Global from '../constants/globalStyles'
 import { GridContainer } from '../templateStyles/bookPageTemplate'
 
-import  { groupBy, chain, value } from 'lodash'
+import  { groupBy } from 'lodash'
 
 const Books = ({ data }) => {
     let books = data.allGoogleSheet1Sheet.nodes
-    
-    const currentlyReading = books.filter((book => {
-        if(book.completed == null) {
-            return book
-        } else {
-            return null
-        }
-    }))
 
     books.filter((book => {
         if(book.completed != null) {
             book.year = book.completed.split('-')[0]
         }
     }))
-
-    // const books20 = books.filter((book => {
-    //     if(book.completed != null) {
-    //         return book.completed.indexOf('2020' !== -1)
-    //     } else {
-    //         return null
-    //     }
-    // }))
 
     const booksObj = groupBy(books, book => book.year)
     

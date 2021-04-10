@@ -11,6 +11,7 @@ import * as Styled from './styles'
 
 const BookGrid = (props) => {
     const linkStyle = css`
+        cursor: pointer;
         padding: 20px;
         margin: 0 4px;
         transition: all 0.3s ease; 
@@ -28,15 +29,15 @@ const BookGrid = (props) => {
 
     return (
         <Styled.BookGrid>
-        {
-            books.map(book => (
-                <Link css={linkStyle} key={book.id} to={`/books/${kebabCase(book.title)}/`} >
-                    <Img fluid={{
-                        ...book.optimizedCoverImage.childImageSharp.fluid
-                    }} />  
-                </Link>
-            ))
-        }
+            {
+                books.map(book => (
+                    <Link css={linkStyle} key={book.id} to={`/books/${kebabCase(book.title)}/`} >
+                        <Img fluid={{
+                            ...book.optimizedCoverImage.childImageSharp.fluid
+                        }} />  
+                    </Link>
+                ))
+            }
         </Styled.BookGrid>
     )
 }
