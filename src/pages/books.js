@@ -15,7 +15,7 @@ const Books = ({ data }) => {
     let books = data.allGoogleSheet1Sheet.nodes
 
     books.filter((book => {
-        if(book.completed != null) {
+        if(book.completed !== null) {
             book.year = book.completed.split('-')[0]
         }
     }))
@@ -30,7 +30,7 @@ const Books = ({ data }) => {
 
                     Object.entries(booksObj).reverse().map(([key, value]) => 
                         <Global.ContainerItem key={key}>
-                            <Global.Heading1>{key != 'undefined' ? key : 'Currently Reading'}</Global.Heading1>
+                            <Global.Heading1>{key !== 'undefined' ? key : 'Currently Reading'}</Global.Heading1>
                             <BookGrid books={value} />
                         </Global.ContainerItem>
                     )
