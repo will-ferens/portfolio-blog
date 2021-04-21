@@ -1,4 +1,5 @@
 const kebabCase = require('lodash.kebabcase')
+const createPaginatedPages = require('gatsby-paginate')
 
 //Create Blog Post pages, create Book pages
 exports.createPages = async ({
@@ -50,15 +51,23 @@ exports.createPages = async ({
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
+
+    const posts = result.data.allMarkdownRemark.edges
+    const postsPerPage = 6
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
     result.data.allMarkdownRemark.edges.forEach(({
-        node
+        node, i
     }) => {
         createPage({
             path: node.frontmatter.slug,
             component: blogPostTemplate,
             context: {
-                // additional data can be passed via context
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                numPages,
                 slug: node.frontmatter.slug,
+                currentPage: i + 1,
             },
         })
     })
