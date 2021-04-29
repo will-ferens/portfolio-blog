@@ -51,27 +51,19 @@ exports.createPages = async ({
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
-
-    const posts = result.data.allMarkdownRemark.edges
-    const postsPerPage = 6
-    const numPages = Math.ceil(posts.length / postsPerPage)
-
     result.data.allMarkdownRemark.edges.forEach(({
-        node, i
+        node
     }) => {
         createPage({
             path: node.frontmatter.slug,
             component: blogPostTemplate,
             context: {
-                limit: postsPerPage,
-                skip: i * postsPerPage,
-                numPages,
+                // additional data can be passed via context
                 slug: node.frontmatter.slug,
-                currentPage: i + 1,
             },
         })
     })
-    
+
     result.data.allGoogleSheet1Sheet.edges.forEach(({
         node
     }) => {
