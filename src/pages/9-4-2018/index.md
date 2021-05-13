@@ -2,6 +2,7 @@
 slug: "/blog/tech-conways-game"
 date: "2018-09-04T21:53:27+00:00"
 title: "Conway’s game of life"
+tags: ['JavaScript', 'Tech']
 ---
 
 
