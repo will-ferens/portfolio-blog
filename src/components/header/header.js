@@ -28,7 +28,11 @@ const Header = ({ siteTitle }) => (
             <p css={linkColor}>About</p>
         </Link>
       </Styled.LinkWrapper>
-
+      <Styled.LinkWrapper>
+        <Link to="/work" >
+            <p css={linkColor}>Work</p>
+        </Link>
+      </Styled.LinkWrapper>
       <Styled.LinkWrapper>
         <Link to="/books" >
             <p css={linkColor}>Books</p>

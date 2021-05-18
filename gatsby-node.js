@@ -1,5 +1,4 @@
 const kebabCase = require('lodash.kebabcase')
-const createPaginatedPages = require('gatsby-paginate')
 
 //Create Blog Post pages, create Book pages
 exports.createPages = async ({

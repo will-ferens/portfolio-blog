@@ -31,9 +31,18 @@ export const LargeImageWrapper = styled.div`
         max-width: 150px;
     }
 `
+
+export const CtaAnchorTag = styled.a`
+    color: #3C3880;
+    font-weight: bold;
+    border-bottom: 2px solid #A8AAFF;
+`
+
+
 export const darkTheme = {
     headerColor: 'C0BDFF',
     backgroundColor: '#121212',
     secondaryBackground: '#242424',
     text: '#dedede'
 }
+
