@@ -27,19 +27,18 @@ We'll declare our hash table as a class:
 ```js
 class HashTable {
   constructor(size) {
-    this.size = size;
+    this.size = size
   }
 
   hash(key) {
-    if(Number.isInteger(key)) {
-      return key % this.size;
+    if (Number.isInteger(key)) {
+      return key % this.size
     } else {
-      throw 'must be integer';
+      throw "must be integer"
     }
   }
 }
 ```
-
 
 So far, our `HashTable` has a fixed size and a hash function. But we need a place to store objects we plan to put into the table. To that end, we'll create another method for the class:
 
@@ -60,9 +59,9 @@ We can use this function to create two arrays: one for keys and another for valu
 ```js
 class HashTable {
   constructor(size) {
-    this.size = size;
-    this.keys = this.initArray(size);
-    this.values = this.initArray(size);
+    this.size = size
+    this.keys = this.initArray(size)
+    this.values = this.initArray(size)
   }
 }
 ```
@@ -87,14 +86,14 @@ put(key, value) {
   if (this.limit <= this.size) {
 
     let hashedIndex = this.hash(key);
-    
+
     //linear probing
     while (this.keys[hashedIndex] != null) {
       hashedIndex++;
-  
+
       hashedIndex = hashedIndex % this.size;
     }
-  
+
     this.keys[hashedIndex] = key;
     this.values[hashedIndex] = value;
     this.limit++;
@@ -125,70 +124,66 @@ get(key) {
 }
 ```
 
-In order to retrieve the desired element, we'll need to find its corresponding `hashedIndex`. So again, we hash our key. If the key is not found on the first try, we begin iterating until we find it. Then, we can use this index to return our element. 
+In order to retrieve the desired element, we'll need to find its corresponding `hashedIndex`. So again, we hash our key. If the key is not found on the first try, we begin iterating until we find it. Then, we can use this index to return our element.
 
 Now that we have our three major components (hash, insert, and get functions), let's take a look at the code as a whole:
 
 ```js
 class HashTable {
   constructor(size) {
-    this.size = size;
-    this.keys = this.initArray(size);
-    this.values = this.initArray(size);
-    this.limit = 0;
+    this.size = size
+    this.keys = this.initArray(size)
+    this.values = this.initArray(size)
+    this.limit = 0
   }
 
   put(key, value) {
     if (this.limit <= this.size) {
+      let hashedIndex = this.hash(key)
 
-      let hashedIndex = this.hash(key);
-      
       //linear probing
       while (this.keys[hashedIndex] != null) {
-        hashedIndex++;
-    
-        hashedIndex = hashedIndex % this.size;
+        hashedIndex++
+
+        hashedIndex = hashedIndex % this.size
       }
-    
-      this.keys[hashedIndex] = key;
-      this.values[hashedIndex] = value;
-      this.limit++;
 
+      this.keys[hashedIndex] = key
+      this.values[hashedIndex] = value
+      this.limit++
     } else {
-
-      throw 'hash table full';
-
+      throw "hash table full"
     }
   }
 
   get(key) {
-    let hashedIndex = this.hash(key);
+    let hashedIndex = this.hash(key)
 
     while (this.keys[hashedIndex] != key) {
-      hashedIndex++;
+      hashedIndex++
 
-      hashedIndex = hashedIndex % this.size;
+      hashedIndex = hashedIndex % this.size
     }
 
-    return this.values[hashedIndex];
+    return this.values[hashedIndex]
   }
 
   hash(key) {
-    if(Number.isInteger(key)) {
-      return key % this.size;
+    if (Number.isInteger(key)) {
+      return key % this.size
     } else {
-      throw 'must be integer';
+      throw "must be integer"
     }
   }
 
   initArray(size) {
-    let array = [];
+    let array = []
 
     for (let i = 0; i < size; i++) {
-      array.push(null);
+      array.push(null)
     }
 
-    return array;
+    return array
   }
 }
 ```
@@ -220,7 +215,7 @@ HashTable {
   limit: 2
 ```
 
-To recap: hash tables are data structures that have efficient insert and retrieval capabilities, using a hashed key to reference objects stored within. This simple implementation uses linear probing to avoid collision - or overwriting existing elements when using the same key. 
+To recap: hash tables are data structures that have efficient insert and retrieval capabilities, using a hashed key to reference objects stored within. This simple implementation uses linear probing to avoid collision - or overwriting existing elements when using the same key.
 
 Linear probing can result in 'grouping' - where data is found in clumps throughout the table. This can negatively impact the efficiency of iterating over the data. Other methods of avoiding collision, such as quadratic probing and rehashing keys can help mitigate.
 

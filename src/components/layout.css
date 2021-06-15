@@ -82,7 +82,7 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #3C3880;
+  color: #3c3880;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -602,6 +602,6 @@ pre tt:after {
 }
 
 .blog-post-content a {
-  color: #3C3880;
+  color: #3c3880;
   text-decoration: underline;
 }

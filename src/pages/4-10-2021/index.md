@@ -6,11 +6,11 @@ title: "Creating my book log"
 
 When quarantine started early last year, I thought to myself, 'Well at least I'll get some reading done.' And I did. For a little while, I chewed through a few books that were on my list as canceled plans stacked up and restaurants shuttered their doors. But as weeks turned into months, the pandemic showed little sign of abating. Grouped with an ugly presidential campaign, mass social unrest, and a questionable economic situation, I soon found myself turning towards distractions like video games and TV rather than books. These were places where I could turn off my brain rather than opening it up.
 
-But I'm a reader. I always have been. Letting the hours slip into the next big game title or the show of the moment (looking at you *Tiger King* and *Love is Blind*) soon left me dissatisfied.
+But I'm a reader. I always have been. Letting the hours slip into the next big game title or the show of the moment (looking at you _Tiger King_ and _Love is Blind_) soon left me dissatisfied.
 
 When I was in college, I hit a highwater mark for my reading. Flying through a book or two a week, I read indiscriminately. Philosophy, literary fiction, poetry, sci fi, classics, the latest blockbusters - they were all picked up with as much interest as the last finished title. But reading is a muscle; if you don't work it out, your endurance wanes.
 
-Life is hard. Letting the Netflix autoplay feature roll on is objectively easier than reading the next chapter of *The Brothers Karamazov*.
+Life is hard. Letting the Netflix autoplay feature roll on is objectively easier than reading the next chapter of _The Brothers Karamazov_.
 
 So I started to ask myself: how could I find my stride again? I'd have to keep myself honest. And in order to ensure I was improving, I'd have to track my reading. So I carved out a section of my website to record my books and reignite my passion.
 
@@ -32,56 +32,52 @@ Creating a spreadsheet, making it public to the web, and enabling it as an API i
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-source-google-spreadsheets',
+      resolve: "gatsby-source-google-spreadsheets",
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
         apiKey: process.env.GOOGLE_API_KEY,
         credentials: {
-          type: 'service_account',
+          type: "service_account",
           project_id: process.env.PROJECT_ID,
           private_key_id: process.env.PRIVATE_KEY_ID,
           private_key: process.env.PRIVATE_KEY,
           client_email: process.env.CLIENT_EMAIL,
           auth_uri: "https://accounts.google.com/o/oauth2/auth",
-          token_uri: "https://oauth2.googleapis.com/token"
-        }
-      }
+          token_uri: "https://oauth2.googleapis.com/token",
+        },
+      },
     },
-  ]
+  ],
 }
 ```
 
 ## Creating pages
 
-Once that's done, all that's left is to query the Sheets doc in our `gatsby-node.js`  file at runtime. But since I wanted each individual entry to have its own page, we'll need to leverage Gatsby's built in `createPages`  API. This will programatically create a page for each book in our spreadsheet, just like it's doing for this blog post:
+Once that's done, all that's left is to query the Sheets doc in our `gatsby-node.js` file at runtime. But since I wanted each individual entry to have its own page, we'll need to leverage Gatsby's built in `createPages` API. This will programatically create a page for each book in our spreadsheet, just like it's doing for this blog post:
 
 ```js
-const kebabCase = require('lodash.kebabcase')
+const kebabCase = require("lodash.kebabcase")
 
 //Create Blog Post pages, create Book pages
-exports.createPages = async ({
-  actions,
-  graphql,
-  reporter
-}) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const bookTemplate = require.resolve(`./src/templates/bookTemplate.js`)
   const result = await graphql(`
-      {
-        allGoogleSheet1Sheet {
-          edges {
-            node {
-              id
-              title
-              author
-              genres
-              pages
-              blurb
-            }
+    {
+      allGoogleSheet1Sheet {
+        edges {
+          node {
+            id
+            title
+            author
+            genres
+            pages
+            blurb
           }
         }
       }
+    }
   `)
   // Handle errors
   if (result.errors) {
@@ -89,22 +85,20 @@ exports.createPages = async ({
     return
   }
 
-  result.data.allGoogleSheet1Sheet.edges.forEach(({
-      node
-  }) => {
+  result.data.allGoogleSheet1Sheet.edges.forEach(({ node }) => {
     let bookSlug = `/books/${kebabCase(node.title)}`
     createPage({
       path: bookSlug,
       component: bookTemplate,
       context: {
-          title: node.title
-      }
+        title: node.title,
+      },
     })
   })
 }
 ```
 
-Here, I'm querying our sheet with a list of fields (columns, in this case), using a template to create a page for each book, and handling any errors (probably in the least productive way possible, but it's just me here 🙃 ). Oh - also I'm using lodash's `kebabCase`  function to create a URL friendly slug for each book so titles look like `this-in-the`  url.
+Here, I'm querying our sheet with a list of fields (columns, in this case), using a template to create a page for each book, and handling any errors (probably in the least productive way possible, but it's just me here 🙃 ). Oh - also I'm using lodash's `kebabCase` function to create a URL friendly slug for each book so titles look like `this-in-the` url.
 
 ### Display
 
@@ -119,16 +113,14 @@ const Books = ({ data }) => {
   return (
     <Layout>
       <GridContainer>
-        {
-          Object.entries(booksObj).map(([key, value]) =>
-            <Global.ContainerItem key={key}>
-              <Global.Heading1>
-                {key != 'undefined' ? key : 'Currently Reading'}
-              </Global.Heading1>
-              <BookGrid books={value} />
-            </Global.ContainerItem>
-          )
-        }
+        {Object.entries(booksObj).map(([key, value]) => (
+          <Global.ContainerItem key={key}>
+            <Global.Heading1>
+              {key != "undefined" ? key : "Currently Reading"}
+            </Global.Heading1>
+            <BookGrid books={value} />
+          </Global.ContainerItem>
+        ))}
       </GridContainer>
     </Layout>
   )
@@ -136,7 +128,7 @@ const Books = ({ data }) => {
 
 export const booksQuery = graphql`
   query allBooksQuery {
-    allGoogleSheet1Sheet(sort: {fields: started}) {
+    allGoogleSheet1Sheet(sort: { fields: started }) {
       nodes {
         id
         author
@@ -163,27 +155,19 @@ I'm using [Emotion](https://emotion.sh/) for styled components. This is by far t
 
 ```js
 <Styled.BookGrid>
-  {
-    books.map(book => (
-      <Link 
-        css={linkStyle} 
-        key={book.id} 
-        to={`/books/${kebabCase(book.title)}/`} 
-      >
-        <Img fluid={{
-          ...book
-            .optimizedCoverImage
-            .childImageSharp
-            .fluid
-        }} /> 
-      </Link>
-    ))
-  }
+  {books.map(book => (
+    <Link css={linkStyle} key={book.id} to={`/books/${kebabCase(book.title)}/`}>
+      <Img
+        fluid={{
+          ...book.optimizedCoverImage.childImageSharp.fluid,
+        }}
+      />
+    </Link>
+  ))}
 </Styled.BookGrid>
 ```
 
 This component also coincidentally makes use of one of the biggest features Gatsby has on Next.js - optimized images. Gatsby automatically creates multiple thumbnails, compression and lazy loading already cooked in. Just one plug-in away.
-
 
 ### The book page
 
@@ -192,41 +176,42 @@ Finally, we drill down to each individual book page. This is a simple component 
 ```js
 let rating = props.rating
 let fullRating = Math.floor(rating / 1)
-let remainder = (parseFloat(rating - fullRating).toFixed(2) * 100)
-let ratingArray = [ ];
+let remainder = parseFloat(rating - fullRating).toFixed(2) * 100
+let ratingArray = []
 
-
-for(let i = 0; i < fullRating; i++) {
-  let obj = {percentage: '99%', fill: 'url(#99%)' }
+for (let i = 0; i < fullRating; i++) {
+  let obj = { percentage: "99%", fill: "url(#99%)" }
   ratingArray.push(obj)
 }
 
-if(remainder > 0) {
-  let obj = {percentage: '50%', fill: 'url(#50%)' }
+if (remainder > 0) {
+  let obj = { percentage: "50%", fill: "url(#50%)" }
   ratingArray.push(obj)
 }
 
-
-const Star = (props) =>
-<svg viewBox="0 -10 511 511" height={16} width={16}>
-  <defs>
-    <linearGradient 
-      id={props.star.percentage} 
-      x1={props.star.percentage} 
-      y1="0%" 
-      x2="100%" 
-      y2="0%"
-    >
-      <stop offset="1%" stopColor="#3C3880" stopOpacity="1"/>
-      <stop offset="0%" stopColor="#fff" stopOpacity="1" />
-    </linearGradient>
-  </defs>
-  <path d={ICONS.STAR} fill={props.star.fill}></path>
-</svg>
+const Star = props => (
+  <svg viewBox="0 -10 511 511" height={16} width={16}>
+    <defs>
+      <linearGradient
+        id={props.star.percentage}
+        x1={props.star.percentage}
+        y1="0%"
+        x2="100%"
+        y2="0%"
+      >
+        <stop offset="1%" stopColor="#3C3880" stopOpacity="1" />
+        <stop offset="0%" stopColor="#fff" stopOpacity="1" />
+      </linearGradient>
+    </defs>
+    <path d={ICONS.STAR} fill={props.star.fill}></path>
+  </svg>
+)
 
 return (
   <div>
-    {ratingArray.map(star => <Star star={star}  />)}
+    {ratingArray.map(star => (
+      <Star star={star} />
+    ))}
   </div>
 )
 ```
@@ -244,4 +229,3 @@ On top of that, it'd be nice to have a link to an independent bookstore that car
 But for now, I'm happy with the feature and always look forward to adding another book to my spreadsheet. Thoughts on a new feature? Constructive criticism? Want to talk about a book I read? Feel free to drop me a line <will.ferens@gmail.com> .
 
 Cheers!
-
