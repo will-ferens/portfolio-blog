@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import * as Global from "../../constants/globalStyles"
 
 const Pager = ({ pageContext }) => {
-  console.log(pageContext)
   const { previousPagePath, nextPagePath } = pageContext
   return (
     <nav style={{ display: "flex", justifyContent: "space-between" }}>
