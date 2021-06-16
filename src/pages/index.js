@@ -36,6 +36,11 @@ export default function IndexPage({ data }) {
                 </Styled.Preview>
               )
             })}
+          <div style={{ justifySelf: "flex-end" }}>
+            <Link to="/blog">
+              <Global.Button>All Posts →</Global.Button>
+            </Link>
+          </div>
         </Global.ContainerItem>
       </Global.Container>
     </Layout>
