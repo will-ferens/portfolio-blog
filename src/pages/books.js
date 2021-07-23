@@ -16,11 +16,13 @@ const Books = ({ data }) => {
 
   books.filter(book => {
     if (book.completed !== null) {
-      book.year = book.completed.split("-")[0]
+      return (book.year = book.completed.split("-")[0])
     }
   })
 
-  const booksObj = groupBy(books, book => book.year)
+  const booksObj = groupBy(books, book => {
+    return book.year
+  })
 
   return (
     <Layout>

@@ -24,9 +24,12 @@ export const LinkWrapper = styled.div`
   }
 `
 
-export const secondColumn = styled.div`
+export const SecondColumn = styled.div`
   grid-column: 3;
   display: flex;
   justify-content: space-between;
   font-weight: 400;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 `
