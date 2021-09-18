@@ -47,6 +47,7 @@ export const booksQuery = graphql`
   query allBooksQuery {
     allGoogleSheet1Sheet(sort: { fields: started }) {
       nodes {
+        blurb
         id
         author
         title
@@ -55,7 +56,7 @@ export const booksQuery = graphql`
         genres
         optimizedCoverImage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid(maxWidth: 281) {
               ...GatsbyImageSharpFluid
             }
           }
