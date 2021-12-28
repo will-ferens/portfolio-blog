@@ -4,6 +4,15 @@ export const Theme = {
   primaryPurple: "#3C3880",
   accentedPurple: "#A8AAFF",
 }
+
+export const DarkTheme = {
+  headerColor: "C0BDFF",
+  backgroundColor: "#121212",
+  secondaryBackground: "#242424",
+  text: "#dedede",
+}
+
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 25% auto 25%;
@@ -55,9 +64,3 @@ export const Button = styled.button`
   }
 `
 
-export const darkTheme = {
-  headerColor: "C0BDFF",
-  backgroundColor: "#121212",
-  secondaryBackground: "#242424",
-  text: "#dedede",
-}
