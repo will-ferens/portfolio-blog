@@ -56,7 +56,7 @@ export const Button = styled.button`
 `
 
 export const darkTheme = {
-  headerColor: "C0BDFF",
+  headerColor: "#5B024D",
   backgroundColor: "#121212",
   secondaryBackground: "#242424",
   text: "#dedede",
