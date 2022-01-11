@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import SEO from "../components/seo"
@@ -28,11 +28,9 @@ export default function Template({ data }) {
       </Styled.HeaderContainer>
       <Styled.HeaderContainer>
         <Styled.CoverContainer>
-          <Img
-            fluid={{
-              ...googleSheet1Sheet.optimizedCoverImage.childImageSharp.fluid,
-              sizes: "(max-width: 250px)",
-            }}
+          <GatsbyImage
+            image={googleSheet1Sheet.file.childImageSharp.gatsbyImageData}
+            alt={googleSheet1Sheet.title}
           />
         </Styled.CoverContainer>
         <Styled.TitleContainer>
@@ -52,7 +50,7 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query ($title: String!) {
+  query($title: String!) {
     googleSheet1Sheet(title: { eq: $title }) {
       title
       author
@@ -61,9 +59,11 @@ export const pageQuery = graphql`
       blurb
       optimizedCoverImage {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            width: 200
+            placeholder: BLURRED
+          )
         }
       }
     }

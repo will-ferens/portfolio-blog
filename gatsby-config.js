@@ -100,5 +100,6 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
+    `gatsby-plugin-image`
   ],
 }

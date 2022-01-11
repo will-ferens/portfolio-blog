@@ -12,7 +12,6 @@ export const DarkTheme = {
   text: "#dedede",
 }
 
-
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 25% auto 25%;
@@ -63,4 +62,3 @@ export const Button = styled.button`
     color: #fff;
   }
 `
-

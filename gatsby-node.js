@@ -1,6 +1,6 @@
 const { paginate } = require("gatsby-awesome-pagination")
 const kebabCase = require("lodash.kebabcase")
-
+const groupBy = require("lodash.groupBy")
 //Create Blog Post pages, create Book pages
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -67,7 +67,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-
   result.data.allGoogleSheet1Sheet.edges.forEach(({ node }) => {
     let bookSlug = `/books/${kebabCase(node.title)}`
     createPage({
