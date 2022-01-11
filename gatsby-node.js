@@ -1,6 +1,6 @@
 const { paginate } = require("gatsby-awesome-pagination")
 const kebabCase = require("lodash.kebabcase")
-const groupBy = require("lodash.groupBy")
+const groupBy = require("lodash.groupby")
 //Create Blog Post pages, create Book pages
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -8,6 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = require.resolve(`./src/templates/postTemplate.js`)
   const bookTemplate = require.resolve(`./src/templates/bookTemplate.js`)
   const blogTemplate = require.resolve(`./src/templates/blogTemplate.js`)
+  const yearTemplate = require.resolve(`./src/templates/yearTemplate.js`)
 
   const result = await graphql(`
     {
@@ -34,6 +35,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             title
             author
+            completed
             genres
             pages
             blurb
@@ -54,6 +56,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     pathPrefix: "/blog",
     component: blogTemplate,
   })
+
+  let books = result.data.allGoogleSheet1Sheet.edges
+  books.filter(({node}) => {
+    if (node.completed !== null) {
+      return (node.year = node.completed.split("-")[0])
+    }
+  })
+
+  const booksObj = groupBy(books, book => {
+    return book.node.year
+  })
+  for(let key in booksObj) {
+    createPage({
+      path: key,
+      component: yearTemplate,
+      
+    })
+  }
+  
+
   const posts = result.data.allMarkdownRemark.edges
   posts.forEach(({ node }, index) => {
     createPage({
