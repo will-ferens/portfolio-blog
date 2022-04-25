@@ -50,3 +50,10 @@ export const Excerpt = styled.p`
     display: none;
   }
 `
+
+export const BookOverlay = styled.div`
+  position: absolute;
+  display: none;
+  border: none;
+  padding: 5px 20px 0 5px;
+`
