@@ -32,7 +32,7 @@ const Books = ({ data }) => {
           .reverse()
           .map(([key, value]) => (
             <Global.ContainerItem key={key}>
-              <Global.Heading1>
+               <Global.Heading1>
                 {key !== "undefined" ? key : "Currently Reading"}
               </Global.Heading1>
               <BookGrid books={value} />
