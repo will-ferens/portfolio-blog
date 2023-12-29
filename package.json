@@ -1,61 +1,30 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "portfolio-blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
-    "axios": "^0.21.1",
-    "d3": "^6.7.0",
-    "dotenv": "^8.6.0",
-    "gatsby": "^2.32.13",
-    "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-image": "^2.11.0",
-    "gatsby-plugin-emotion": "^4.5.0",
-    "gatsby-plugin-glamor": "^2.10.0",
-    "gatsby-plugin-image": "^2.5.0",
-    "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-offline": "^3.10.2",
-    "gatsby-plugin-react-helmet": "^3.10.0",
-    "gatsby-plugin-remote-images": "^2.4.0",
-    "gatsby-plugin-sharp": "^2.14.4",
-    "gatsby-remark-prismjs": "^3.13.0",
-    "gatsby-source-filesystem": "^2.11.1",
-    "gatsby-source-google-spreadsheets": "^3.0.8",
-    "gatsby-transformer-remark": "^2.16.1",
-    "gatsby-transformer-sharp": "^2.12.1",
-    "glamor": "^2.20.40",
-    "lodash.groupby": "^4.6.0",
-    "lodash.kebabcase": "^4.1.1",
-    "prismjs": "^1.23.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0"
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.16",
+    "next": "14.0.4",
+    "prop-types": "^15.8.1",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
-  "scripts": {
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider; gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
   }
 }
