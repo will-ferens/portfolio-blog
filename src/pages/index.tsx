@@ -1,5 +1,5 @@
 import { Link, Box, Grid, Text, Heading, GridItem } from '@chakra-ui/react';
-import { Work } from '../types';
+import { Work } from '@/types';
 
 const work : Work[] = [
   {
@@ -49,6 +49,14 @@ export default function Home() {
           </Box>
         </GridItem>
       </Grid>
+      <Box>
+        <Heading as="h2" size="md" mb={2}>
+          About
+        </Heading>
+        <Text>
+          Summary here
+        </Text>
+      </Box>
       <Box>
 
       </Box>
