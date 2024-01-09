@@ -10,7 +10,7 @@ const work : Work[] = [
     bullets: [
       'Designs, builds, and maintains APIs core to organizational operation of 30,000 properties', 
       'Leverages knowledge of AWS services to provide cost effective and performant software, lowering overhead by as much as 33%',
-      'Onboards new employees with a specifically developed documentation and tooling designed to set up new engineers for success',
+      'Onboards new employees with specifically developed documentation and tooling designed to set up new engineers for success',
     ],
   },
   {
