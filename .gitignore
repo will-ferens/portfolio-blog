@@ -72,3 +72,10 @@ yarn-error.log
 
 # to do list
 TODO.md
+CLAUDE.md
+
+# Next.js build output
+.next/
+
+# Editor
+.vscode/
