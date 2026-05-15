@@ -202,9 +202,7 @@ export async function GET(req: NextRequest) {
       items,
     }
 
-    return NextResponse.json(body, {
-      headers: { 'Cache-Control': 'public, s-maxage=3600' },
-    })
+    return NextResponse.json(body)
   } catch (err: any) {
     const code = err.message === 'parse_error' ? 'parse_error' : 'upstream_unavailable'
     return NextResponse.json({ error: code }, { status: code === 'parse_error' ? 500 : 502 })
