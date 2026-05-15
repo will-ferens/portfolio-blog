@@ -77,5 +77,8 @@ CLAUDE.md
 # Next.js build output
 .next/
 
+# TypeScript build cache
+tsconfig.tsbuildinfo
+
 # Editor
 .vscode/
