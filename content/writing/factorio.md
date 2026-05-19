@@ -1,7 +1,7 @@
 ---
 date: 2026.05.8
-title: Experiments and Data Driven Decisions
-tags: [SYSTEMS, TYPESCRIPT]
+title: Factorio
+tags: [GAMING, ENGINEERING]
 ---
 
 You've crash landed on an alien planet. As you emerge from the burning rubble of your space ship, you take stock: a pick, an ax, a loaded pistol, and your wits. Hostile aliens spawn in nearby brood nests. Now what? Building a replacement spacefaring vessel is the only thing to do. With iron, copper, and stone deposits nearby, the path toward your ultimate goal immediately begins sprawling outward. What do you need to build a rocket? Electronic chips, metal plating, fuel...
