@@ -2,6 +2,7 @@
 date: 2026.05.01
 title: Software Engineering Has Not Changed
 tags: [ENGINEERING, THOUGHTS, AI]
+reading: 5 min read
 ---
 
 All the way back in 2023, I participated in a company wide hackathon, just as large language models were starting to become publicly accessible. At that point, most people hadn’t really interacted with the technology yet. I wired our company's search bar into the model and built a prototype that let users query internal information conversationally.

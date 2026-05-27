@@ -45,7 +45,15 @@ export function ResumeSidebar() {
 
       <div className="resume-sidebar-section">
         <div className="resume-sidebar-label">Download</div>
-        <div className="resume-skill" style={{ color: 'var(--accent)' }}>■ PDF VERSION ↗</div>
+        <a
+          href="https://docs.google.com/document/d/1yP4vdrqt3LoK0TRCkugNyz8Oz5QfG81icsL6wb1gjAo/export?format=pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-skill"
+          style={{ color: 'var(--accent)', textDecoration: 'none' }}
+        >
+          ■ PDF VERSION ↗
+        </a>
       </div>
     </aside>
   )

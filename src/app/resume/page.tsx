@@ -17,8 +17,7 @@ export default function ResumePage() {
           </span>
         </h1>
         <p>
-          Engineer of many hats. Most recent work at the intersection of developer tools,
-          infrastructure, and small-team craft. Currently available for new projects.
+          Engineer of many hats. Currently available for new projects.
         </p>
       </section>
 

@@ -25,6 +25,7 @@ export function toMediaItem(item: FeedItem): MediaItem {
   return {
     date: item.dateConsumed,
     title: item.title,
+    url: item.url || undefined,
     author: item.author,
     year: item.year,
     topic: item.topic || 'BOOK',

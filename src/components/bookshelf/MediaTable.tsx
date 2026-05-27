@@ -25,7 +25,18 @@ export function MediaTable({ items, kind }: MediaTableProps) {
             <span className="marker" aria-hidden="true" />
             {/* title-cell: flex row on desktop, column on mobile */}
             <div className="title-cell">
-              <span className="title-text">{it.title}</span>
+              {it.url ? (
+                <a
+                  href={it.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="title-text title-link"
+                >
+                  {it.title}
+                </a>
+              ) : (
+                <span className="title-text">{it.title}</span>
+              )}
               {it.author && (
                 <span className="title-author">{it.author}</span>
               )}

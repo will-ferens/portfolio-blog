@@ -1,6 +1,7 @@
 export type MediaItem = {
   date: string
   title: string
+  url?: string
   author?: string
   year?: string
   topic: string
@@ -93,6 +94,6 @@ export const EDUCATION: EducationEntry[] = [
 ]
 
 export const SKILLS: Record<string, string[]> = {
-  LANGUAGES: ['TypeScript', 'JavaScript', 'Python', 'SQL', 'Go', 'Ruby'],
+  LANGUAGES: ['TypeScript', 'JavaScript', 'Python', 'SQL', 'Go', 'Ruby', 'Java'],
   INFRA: ['AWS', 'Postgres', 'Redis', 'Docker', 'Serverless', 'Terraform'],
 }

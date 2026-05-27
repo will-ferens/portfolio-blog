@@ -39,7 +39,10 @@ export function getAllPosts(): Post[] {
         figure:   data.figure  ? String(data.figure)  : undefined,
       }
     })
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort((a, b) => {
+      const toMs = (d: string) => new Date(d.replace(/\./g, '-')).getTime()
+      return toMs(b.date) - toMs(a.date)
+    })
 }
 
 export async function getPost(slug: string): Promise<PostWithHtml | null> {

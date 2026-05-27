@@ -2,6 +2,7 @@
 date: 2026.05.14
 title: Experiments and Data Driven Decisions
 tags: [SYSTEMS, TYPESCRIPT]
+reading: 8 min read
 ---
 
 At a previous company, Monday mornings were spent dissecting analytics dashboards. 400 people clicked “Learn More,” but only a handful booked demos. We’d pitch solutions: should pricing be tier-based? Should we expose a customer preview endpoint? Each tweak produced a new set of numbers, and the cycle repeated the next week.
