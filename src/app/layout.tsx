@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter_Tight, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import 'katex/dist/katex.min.css'
 import { Providers } from './providers'
 import { ConsoleBar } from '@/components/ConsoleBar'
 

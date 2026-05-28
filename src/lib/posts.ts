@@ -3,8 +3,13 @@ import path from 'path'
 import matter from 'gray-matter'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
+import remarkMath from 'remark-math'
 import remarkGfm from 'remark-gfm'
-import remarkHtml from 'remark-html'
+import remarkRehype from 'remark-rehype'
+import rehypeRaw from 'rehype-raw'
+import rehypeKatex from 'rehype-katex'
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeStringify from 'rehype-stringify'
 
 const POSTS_DIR = path.join(process.cwd(), 'content/writing')
 
@@ -54,8 +59,16 @@ export async function getPost(slug: string): Promise<PostWithHtml | null> {
 
   const result = await unified()
     .use(remarkParse)
+    .use(remarkMath)
     .use(remarkGfm)
-    .use(remarkHtml, { sanitize: false })
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeKatex)
+    .use(rehypePrettyCode, {
+      theme: { dark: 'github-dark-dimmed', light: 'github-light' },
+      keepBackground: false,
+    })
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
 
   return {

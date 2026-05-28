@@ -853,6 +853,56 @@ a.now-lbl-link:hover { color: var(--accent); }
   padding: 0;
   font-size: 13px;
   line-height: 1.65;
+  color: var(--shiki-dark);
+}
+html[data-theme="light"] .prose pre code {
+  color: var(--shiki-light);
+}
+.prose pre code span {
+  color: var(--shiki-dark);
+}
+html[data-theme="light"] .prose pre code span {
+  color: var(--shiki-light);
+}
+
+/* Code block filename/title caption */
+.prose figcaption[data-rehype-pretty-code-title] {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+  border-bottom: none;
+  padding: 6px 16px;
+  border-radius: 2px 2px 0 0;
+  margin-bottom: -1px;
+}
+.prose figcaption[data-rehype-pretty-code-title] + pre {
+  border-radius: 0 0 2px 2px;
+}
+
+/* Images */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em 0;
+  border: 1px solid var(--hairline);
+}
+.prose figure {
+  margin: 1.5em 0;
+}
+.prose figure img { margin: 0; }
+.prose figcaption:not([data-rehype-pretty-code-title]) {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  margin-top: 8px;
+  text-align: center;
 }
 
 /* featured card as a link — resets anchor styles */
