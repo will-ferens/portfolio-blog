@@ -27,8 +27,8 @@ export type EducationEntry = {
 export const PROFILE = {
   name: 'Will Ferens',
   initials: 'WF',
-  taglinePrefix: 'Software engineer in Denver, writing about ',
-  taglineAccent: 'work, life, and the things that fall in-between.',
+  taglinePrefix: 'Software engineer in Denver',
+  taglineAccent: '',
   location: 'Denver, CO',
   email: 'will.ferens@gmail.com',
   github: '@will-ferens',
@@ -36,12 +36,21 @@ export const PROFILE = {
   linkedin: 'will-ferens',
   linkedinUrl: 'https://www.linkedin.com/in/will-ferens/',
   status: 'Available',
-  current: 'Independent · contract work',
+  current: 'Senior Engineer · Windfall',
 }
 
 
 
 export const EXPERIENCE: ExpEntry[] = [
+  {
+    range: '2026 — Now',
+    role: 'Senior Software Engineer',
+    org: 'Windfall',
+    body: [
+      'Building interfaces and backends for a data modeling platform.',
+    ],
+    stack: ['TYPESCRIPT', 'JAVA', 'REACT', 'GCP', 'BIGQUERY', 'AI'],
+  },
   {
     range: '2024 — 2026',
     role: 'Senior Software Engineer',

@@ -12,11 +12,6 @@ export function Hero() {
       </div>
 
       <div className="metadata">
-        <div className="group-label">/ METADATA</div>
-        <div className="metadata-row">
-          <span className="k">Status</span>
-          <span className="v status">{PROFILE.status}</span>
-        </div>
         <div className="metadata-row">
           <span className="k">Current</span>
           <span className="v">{PROFILE.current}</span>
